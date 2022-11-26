@@ -61,13 +61,14 @@ namespace MTApiService
                     return false;
                 }
 
-                //init local pipe host
-                var localPipeUrl = CreateConnectionAddress(null, port, true);
-                var localPipeServiceHost = CreateServiceHost(localPipeUrl, true);
-                if (localPipeServiceHost != null)
-                {
-                    _hosts.Add(localPipeServiceHost);
-                }
+                // currently not supported with CoreWCF
+                ////init local pipe host
+                //var localPipeUrl = CreateConnectionAddress(null, port, true);
+                //var localPipeServiceHost = CreateServiceHost(localPipeUrl, true);
+                //if (localPipeServiceHost != null)
+                //{
+                //    _hosts.Add(localPipeServiceHost);
+                //}
 
                 //init localhost
                 var localUrl = CreateConnectionAddress("localhost", port, false);
@@ -77,23 +78,24 @@ namespace MTApiService
                     _hosts.Add(localServiceHost);
                 }
 
-                //init network hosts
-                var dnsHostName = Dns.GetHostName();
-                var ips = Dns.GetHostEntry(dnsHostName);
+                // currently not required for CoreWCF
+                ////init network hosts
+                //var dnsHostName = Dns.GetHostName();
+                //var ips = Dns.GetHostEntry(dnsHostName);
 
-                foreach (var ipAddress in ips.AddressList)
-                {
-                    if (ipAddress?.AddressFamily == AddressFamily.InterNetwork)
-                    {
-                        var ip = ipAddress.ToString();
-                        var networkUrl = CreateConnectionAddress(ip, port, false);
-                        var serviceHost = CreateServiceHost(networkUrl, false);
-                        if (serviceHost != null)
-                        {
-                            _hosts.Add(serviceHost);
-                        }
-                    }
-                }
+                //foreach (var ipAddress in ips.AddressList)
+                //{
+                //    if (ipAddress?.AddressFamily == AddressFamily.InterNetwork)
+                //    {
+                //        var ip = ipAddress.ToString();
+                //        var networkUrl = CreateConnectionAddress(ip, port, false);
+                //        var serviceHost = CreateServiceHost(networkUrl, false);
+                //        if (serviceHost != null)
+                //        {
+                //            _hosts.Add(serviceHost);
+                //        }
+                //    }
+                //}
 
                 count = _hosts.Count;
             }
