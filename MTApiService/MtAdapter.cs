@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Threading;
 using log4net;
 
 namespace MTApiService
@@ -20,6 +22,7 @@ namespace MTApiService
 
         private MtAdapter()
         {
+            CultureInfo.DefaultThreadCurrentUICulture = Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
             LogConfigurator.Setup(LogProfileName);
         }
         
