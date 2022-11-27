@@ -35,6 +35,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mq5", "mq5", "{45176C1B-E5C
 		mq5\MtApi5.mq5 = mq5\MtApi5.mq5
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTApiServerStandalone", "TestClients\MTApiServerStandalone\MTApiServerStandalone.csproj", "{A5655FF3-4E57-4321-8FB2-D1A820D8EBBF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -151,12 +153,29 @@ Global
 		{7CAFAAE2-0C15-479A-B16D-C2FCE0A48E11}.Release|x64.Build.0 = Release|Any CPU
 		{7CAFAAE2-0C15-479A-B16D-C2FCE0A48E11}.Release|x86.ActiveCfg = Release|Any CPU
 		{7CAFAAE2-0C15-479A-B16D-C2FCE0A48E11}.Release|x86.Build.0 = Release|Any CPU
+		{A5655FF3-4E57-4321-8FB2-D1A820D8EBBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5655FF3-4E57-4321-8FB2-D1A820D8EBBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5655FF3-4E57-4321-8FB2-D1A820D8EBBF}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{A5655FF3-4E57-4321-8FB2-D1A820D8EBBF}.Debug|Win32.Build.0 = Debug|Any CPU
+		{A5655FF3-4E57-4321-8FB2-D1A820D8EBBF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A5655FF3-4E57-4321-8FB2-D1A820D8EBBF}.Debug|x64.Build.0 = Debug|Any CPU
+		{A5655FF3-4E57-4321-8FB2-D1A820D8EBBF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A5655FF3-4E57-4321-8FB2-D1A820D8EBBF}.Debug|x86.Build.0 = Debug|Any CPU
+		{A5655FF3-4E57-4321-8FB2-D1A820D8EBBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5655FF3-4E57-4321-8FB2-D1A820D8EBBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5655FF3-4E57-4321-8FB2-D1A820D8EBBF}.Release|Win32.ActiveCfg = Release|Any CPU
+		{A5655FF3-4E57-4321-8FB2-D1A820D8EBBF}.Release|Win32.Build.0 = Release|Any CPU
+		{A5655FF3-4E57-4321-8FB2-D1A820D8EBBF}.Release|x64.ActiveCfg = Release|Any CPU
+		{A5655FF3-4E57-4321-8FB2-D1A820D8EBBF}.Release|x64.Build.0 = Release|Any CPU
+		{A5655FF3-4E57-4321-8FB2-D1A820D8EBBF}.Release|x86.ActiveCfg = Release|Any CPU
+		{A5655FF3-4E57-4321-8FB2-D1A820D8EBBF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{38B9C657-BC2F-44F0-8824-54B31F2A64F5} = {B91FF338-E05D-4EF1-948B-A2376DB37ECA}
+		{A5655FF3-4E57-4321-8FB2-D1A820D8EBBF} = {B91FF338-E05D-4EF1-948B-A2376DB37ECA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {23C8878C-16A5-47DF-9A57-73CCF847780D}
