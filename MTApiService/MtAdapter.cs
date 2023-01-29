@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Reflection;
 using System.Threading;
 using log4net;
 
@@ -24,6 +25,9 @@ namespace MTApiService
         {
             CultureInfo.DefaultThreadCurrentUICulture = Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
             LogConfigurator.Setup(LogProfileName);
+            Log.Info($"Assembly version: {Assembly.GetExecutingAssembly().GetName().Version}");
+            Log.Info($"Assembly location: {Assembly.GetExecutingAssembly().Location}");
+            Log.Info($"Assembly was loaded from GAC: {Assembly.GetExecutingAssembly().GlobalAssemblyCache}");
         }
         
         static MtAdapter() 

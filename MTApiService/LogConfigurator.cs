@@ -105,6 +105,15 @@ namespace MTApiService
             };
             roller.ActivateOptions();
             hierarchy.Root.AddAppender(roller);
+
+#if (DEBUG)
+            var consoleAppender = new ConsoleAppender
+            {                
+                Layout = patternLayout
+            };
+            hierarchy.Root.AddAppender(consoleAppender);
+#endif
+
             hierarchy.Root.Level = ConvertLogLevel(logLevel);
             hierarchy.Configured = true;
         }
