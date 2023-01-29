@@ -86,10 +86,7 @@ namespace MTApiService
 
             lock (_experts)
             {
-                if (_experts.ContainsKey(expertHandle))
-                {
-                    expert = _experts[expertHandle];
-                }
+                _experts.TryGetValue(expertHandle, out expert);
             }
 
             if (expert != null)
@@ -111,7 +108,7 @@ namespace MTApiService
             MtExpert expert;
             lock (_experts)
             {
-                expert = _experts[expertHandle];
+                _experts.TryGetValue(expertHandle, out expert);
             }
 
             if (expert != null)
@@ -133,7 +130,7 @@ namespace MTApiService
             MtExpert expert;
             lock (_experts)
             {
-                expert = _experts[expertHandle];
+                _experts.TryGetValue(expertHandle, out expert);
             }
 
             if (expert != null)
@@ -155,7 +152,7 @@ namespace MTApiService
             MtExpert expert;
             lock (_experts)
             {
-                expert = _experts[expertHandle];
+                _experts.TryGetValue(expertHandle, out expert);
             }
 
             if (expert != null)
@@ -177,7 +174,7 @@ namespace MTApiService
             MtExpert expert;
             lock (_experts)
             {
-                expert = _experts[expertHandle];
+                _experts.TryGetValue(expertHandle, out expert);
             }
 
             if (expert == null)
@@ -199,7 +196,7 @@ namespace MTApiService
             MtExpert expert;
             lock (_experts)
             {
-                expert = _experts[expertHandle];
+                _experts.TryGetValue(expertHandle, out expert);
             }
 
             if (expert == null)
@@ -221,7 +218,7 @@ namespace MTApiService
             MtExpert expert;
             lock (_experts)
             {
-                expert = _experts[expertHandle];
+                _experts.TryGetValue(expertHandle, out expert);
             }
 
             if (expert == null)
@@ -243,7 +240,7 @@ namespace MTApiService
             MtExpert expert;
             lock (_experts)
             {
-                expert = _experts[expertHandle];
+                _experts.TryGetValue(expertHandle, out expert);
             }
 
             if (expert == null)
