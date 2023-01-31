@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace MTApiService
 {
+    [CallbackBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, UseSynchronizationContext = false)]
     public sealed class MtClient : IMtApiCallback, IDisposable
     {
         private const string ServiceName = "MtApiService";
