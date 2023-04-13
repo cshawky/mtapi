@@ -77,10 +77,17 @@ jobs:
         env:
           WORK_DIR: ${{ github.workspace }}
         run: |
-          Compress-Archive -Path ${{ env.WORK_DIR }}\artifacts\* -DestinationPath ${{ env.WORK_DIR }}\MetaTraderApi.zip
+          Compress-Archive -Path ${{ env.WORK_DIR }}\artifacts\* -DestinationPath ${{ env.WORK_DIR }}\MetaTraderApi.zip      
+      - name: Get Release text
+        id: release_log
+        run: 
+          echo "::set-output name=LOG::$(
+             git log HEAD --pretty=format:"%h %s" -n 1
+          )"      
       - name: Release to Latest
         uses: softprops/action-gh-release@v1
         if: github.ref == 'refs/heads/master'
         with:
           tag_name: Latest
+          body: ${{ steps.release_log.outputs.LOG }}
           files: ${{ env.WORK_DIR }}\MetaTraderApi.zip
