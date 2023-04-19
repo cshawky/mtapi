@@ -1,35 +1,24 @@
 ## Introduction
-MtApi provides a .NET API for working with famous trading platfrom [MetaTrader(MetaQuotes)](https://www.metatrader5.com/).  
-It is not API for connection to MT servers directly. MtApi is just a bridge between MT terminal and .NET applications designed by developers.  
+MtApi provides a .NET Core API for working with famous trading platfrom [MetaTrader(MetaQuotes)](https://www.metatrader5.com/).  
+It is not API for connection to MT servers directly. MtApi is just a bridge between MT terminal and .NET Core applications designed by developers.  
 MtApi executes MQL commands and functions by MtApi's expert linked to chart of MetaTrader.  
 Most of the API's functions duplicates MQL interface.  
 The project was designed using [WCF](https://docs.microsoft.com/en-us/dotnet/framework/wcf/whats-wcf) framework with the intention of using flexibility to setup connections.
 
 ## Build environment
 The project is supported by [Visual Studio 2022](https://visualstudio.microsoft.com/de/vs/community/).
-It requires WIX Tools for preparing project's installers (http://wixtoolset.org/).
-
-Installing WIX for mtapi:
-1. Make sure you install one of the latest (3.14+) development releases of the wixtoolset.
-(If you use an older installer you will have to install the ancient .NET 3.5 framework, and that I am sure you will regret, if you do!).
-2. Run the installer and wait for completion or for asking to also install the VS extensions.
-
-![alt text](https://user-images.githubusercontent.com/52289379/97868674-c8c97a80-1d18-11eb-89f3-cdef9d9cc02f.png)
-
-3. Install the WiX Toolset Visual Studio Extension depending on your VS version.
-For example, if you use VS 2017, go [here](https://marketplace.visualstudio.com/items?itemName=WixToolset.WixToolsetVisualStudio2017Extension) or download from their GitHub, releases.
-
-Use [MetaEditor](https://www.metatrader5.com/en/automated-trading/metaeditor) to working with MQL files.
+The installer part is using WiX v4 (https://wixtoolset.org/docs/intro/).
+Use [MetaEditor](https://www.metatrader5.com/en/automated-trading/metaeditor) to compile MQL files (`*.mq5`) into `*.ex5`.
 
 ## How to Build Solution
 
 For building the solution for MT5, you need to choose the configuration to build for **`x64`** and start build **`MtApi5Installer`**.  This will build all projects related to MT5:  
-- `MtApi5` 
-- `MTApiService`
+- `MtApi5` (client-side)
+- `MTApiServiceNetCore` (client-side)
+- `MTApiService` (server-side)
 
-All binaries are placed in the project root folder, in the *build* directory:   **`../build/`**.   
-The installers (**`*.msi, *.exe`**) will be found under:  **`../build/installers/`**.   
-All the DLL library binaries (**`*.dll`**) in:  **`../bin/`**.
+All binaries are placed in the project root folder, in the *build* directory:   **`../build/products/`**.   
+The installer (**`*.msi) will be found under:  **`../build/installers/`**.
 
 MQL files have been pre-compiled to **`*.ex5`** and can be found in the repository here:  
 - **`..\mql5\`**
@@ -49,7 +38,7 @@ C:\Users\<username>\AppData\Roaming\MetaQuotes\Terminal\<terminal-hash>\MQL5\Inc
 ## Project Structure
 
 * `MTApiService`: `(C#, .dll)`
-The common engine communication  project of the API. It contains the implementations of client and server sides and as proxy between MQL and C# (server side).  
+The common engine communication project of the API. It contains the implementations of client and server sides and as proxy between MQL and C# (server side).  
 
 * `MtApi5`: `(C#, .dll)`
 The client side libraries that are using in user's projects.  
